@@ -41,6 +41,10 @@ testdates = np.reshape(testdates, (len(testdates),1))
 trainprices = np.reshape(trainprices, (len(trainprices),1))
 prices = np.reshape(prices,(len(prices),1))
 dates = np.reshape(dates,(len(dates),1))
+
+
+
+
 # we use regression (SVR)as we want to predict how much the next opening price will be
 
 #finetuning the paramerers
@@ -84,7 +88,7 @@ def predictprice(traindates,testdates,trainprices,testprices):
 
     # svr_lin = SVR(kernel ='linear', C=1e3)
     # svr_poly = SVR(kernel='poly', C=1e3, degree=2)
-    svr_rbf = SVR(kernel='rbf', C=1e3,gamma = 0.1, epsilon=0.001)
+    svr_rbf = SVR(kernel='rbf', C=1e3,gamma = 0.1, epsilon=0.001 )
     # svr_lin.fit(dates,prices)
     # svr_poly.fit(dates,prices)
     svr_rbf.fit(dates,prices)
